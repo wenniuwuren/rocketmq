@@ -99,6 +99,12 @@ public class BrokerStartup {
             }
 
             final BrokerConfig brokerConfig = new BrokerConfig();
+
+            // 设置了rocketMQhome和namesrv的地址
+            // 配置 rocketmq 根路径，windows设置环境变量无效
+            brokerConfig.setRocketmqHome("C:\\IDEA\\rocketmq\\distribution");
+            brokerConfig.setNamesrvAddr("127.0.0.1:9876");
+
             final NettyServerConfig nettyServerConfig = new NettyServerConfig();
             final NettyClientConfig nettyClientConfig = new NettyClientConfig();
 
